@@ -12,8 +12,6 @@ dependency-reduced-pom.xml
 *.log
 *.log.*
 *.class
-/test_maria_base/
-/test_maria_data/
 !/src/main/webapp/static/img/uploaded/DONOTDELETE.md
 /src/main/webapp/static/img/uploaded/*
 
