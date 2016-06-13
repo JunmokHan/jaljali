@@ -1,16 +1,53 @@
 package com.jaljali.mapper;
 
-import com.jaljali.config.Mapper;
 import com.jaljali.domain.User;
-import org.mybatis.spring.annotation.MapperScan;
+import com.jaljali.domain.dto.UserDto;
+import org.apache.ibatis.annotations.Param;
 
 /**
- * Created by music on 2016. 6. 10..
+ * 사용자 userMapper
  */
-@Mapper
 public interface UserMapper {
 
-    void createUser(User user);
+    /**
+     * 사용자 정보 생성
+     * @param user
+     */
+    void create(User user);
 
-    void updateUser(User user);
+    /**
+     * 사용자 정보 수정
+     * 사용자 전체 정보를 조회해 수정 화면에 뿌려주고 전체를 가져올 것
+     * @param user
+     */
+    void update(User user);
+
+    /**
+     * 비밀번호 변경
+     * @param id
+     * @param password
+     */
+    void updatePassword(@Param("id")Long id, @Param("password") String password);
+
+    /**
+     * 이메일 조회
+     * @param email
+     * @return
+     */
+    String readEmail(@Param("email")String email);
+
+    /**
+     * 사용자 조회
+     * @param id
+     */
+    User read(@Param("id")Long id);
+
+    /**
+     * 사용자 DTO 조회
+     * @param id
+     * @return
+     */
+    UserDto readDto(@Param("id")Long id);
+
+
 }

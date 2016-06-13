@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper>
+    <resultMap id="Handler" type="com.jaljali.domain.Handler">
+        <result property="creator"  column="creator"/>
+        <result property="created"  column="created"/>
+        <result property="modifier" column="modifier"/>
+        <result property="modified" column="modified"/>
+    </resultMap>
+</mapper>
