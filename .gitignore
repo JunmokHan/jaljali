@@ -4,10 +4,7 @@
 .springBeans
 /target/
 /docs/api/
-test.mv.db
-test.trace.db
-dependency-reduced-pom.xml
-/.idea
+/.idea/
 *.iml
 *.log
 *.log.*
