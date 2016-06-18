@@ -19,6 +19,8 @@ public class User implements Serializable{
 
     private String phone;
 
+    private Handler handler;
+
     public Long getId() {
         return id;
     }
@@ -57,5 +59,13 @@ public class User implements Serializable{
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Handler getHandler() {
+        return handler;
+    }
+
+    public void setHandler(Handler handler) {
+        this.handler = handler;
     }
 }

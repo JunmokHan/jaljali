@@ -2,40 +2,29 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jaljali.mapper.UserMapper">
 
-    <resultMap id="user" type="com.jaljali.domain.User">
-        <id     property="id"       column="id"/>
-        <result property="email"    column="email"/>
-        <result property="password" column="password"/>
-        <result property="name"     column="name"/>
-        <result property="phone"    column="phone"/>
-        <association property="handler" resultMap="com.jaljali.mapper.HandlerMapper.Handler"/>
-    </resultMap>
-
-    <resultMap id="userDto" type="com.jaljali.domain.dto.UserDto">
-        <id     property="id"       column="id"/>
-        <result property="email"    column="email"/>
-        <result property="password" column="password"/>
-        <result property="name"     column="name"/>
-        <result property="phone"    column="phone"/>
-        <association property="handler" resultMap="com.jaljali.mapper.HandlerMapper.Handler"/>
-    </resultMap>
-
-    <insert id="create" parameterType="User">
+    <insert id="create" parameterType="User" keyProperty="id" keyColumn="id" useGeneratedKeys="true">
         INSERT  INTO
-            user
-            (
-                id,
-                email,
-                password,
-                name,
-                phone
-            ) VALUES (
-            #{id},
-            #{email},
-            #{password},
-            #{name},
-            #{phone}
-        )
+        user    (
+                    id,
+                    email,
+                    password,
+                    name,
+                    phone,
+                    creator,
+                    created,
+                    modifier,
+                    modified
+                ) VALUES (
+                    #{id},
+                    #{email},
+                    #{password},
+                    #{name},
+                    #{phone},
+                    #{handler.creator},
+                    #{handler.created},
+                    #{handler.modifier},
+                    #{handler.modified}
+                )
     </insert>
 
     <update id="update" parameterType="User">
@@ -51,28 +40,56 @@
         WHERE   id        = #{id}
     </update>
 
-    <select id="read" resultMap="user">
-        SELECT  id,
-        email,
-        password,
-        name,
-        phone
-        FROM    user
-        WHERE   id        = #{id}
-    </select>
-    <select id="readDto" resultMap="userDto">
-    #         TODO : JOIN 걸고 서브쿼리
-        SELECT  id,
-        email,
-        password,
-        name,
-        phone
+    <select id="readEmail" parameterType="String">
+        SELECT  email
         FROM    user
         WHERE   id        = #{id}
     </select>
 
-    <select id="readEmail" parameterType="String">
-        SELECT  email
+    <resultMap id="user" type="com.jaljali.domain.User">
+        <id     property="id"       column="id"/>
+        <result property="email"    column="email"/>
+        <result property="password" column="password"/>
+        <result property="name"     column="name"/>
+        <result property="phone"    column="phone"/>
+        <association property="handler" resultMap="com.jaljali.mapper.HandlerMapper.handler"/>
+    </resultMap>
+
+    <select id="reads" resultMap="user">
+        SELECT  id,
+                email,
+                password,
+                name,
+                phone
+        FROM    user
+    </select>
+
+    <select id="read" resultMap="user">
+        SELECT  id,
+                email,
+                password,
+                name,
+                phone
+        FROM    user
+        WHERE   id        = #{id}
+    </select>
+
+    <resultMap id="userDto" type="com.jaljali.domain.dto.UserDto">
+        <id     property="id"       column="id"/>
+        <result property="email"    column="email"/>
+        <result property="password" column="password"/>
+        <result property="name"     column="name"/>
+        <result property="phone"    column="phone"/>
+        <association property="handler" resultMap="com.jaljali.mapper.HandlerMapper.handler"/>
+    </resultMap>
+
+    <select id="readDto" resultMap="userDto">
+    #         TODO : JOIN 걸고 서브쿼리
+        SELECT  id,
+                email,
+                password,
+                name,
+                phone
         FROM    user
         WHERE   id        = #{id}
     </select>

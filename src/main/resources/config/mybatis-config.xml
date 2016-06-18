@@ -7,7 +7,7 @@
         <environment id="dev">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
-                <property name="driver" value="db.driverName"/>
+                <property name="driver" value="${db.driverName}"/>
                 <property name="url" value="${db.url}"/>
                 <property name="username" value="${db.username}"/>
                 <property name="password" value="${db.password}"/>
@@ -17,4 +17,5 @@
     <mappers>
         <package name="com.jaljali.mapper"/>
     </mappers>
+
 </configuration>

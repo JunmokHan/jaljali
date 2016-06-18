@@ -13,11 +13,13 @@
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <!--DB 소스 입력-->
     <bean id="dataSource" class="org.apache.ibatis.datasource.pooled.PooledDataSource">
-        <property name="driver" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost/jaljali" />
-        <property name="username" value="root" />
-        <property name="password" value="1234" />
+        <property name="driver" value="${db.driverName}" />
+        <property name="url" value="${db.url}" />
+        <property name="username" value="${db.username}" />
+        <property name="password" value="${db.pwd}" />
     </bean>
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
@@ -29,5 +31,8 @@
         <constructor-arg index="0" ref="sqlSessionFactory" />
     </bean>
 
-    <mybatis:scan base-package="com.jaljali.mapper" />
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.jaljali.mapper"/>
+    </bean>
+
 </beans>

@@ -31,10 +31,10 @@ public interface UserMapper {
 
     /**
      * 이메일 조회
-     * @param email
+     * @param id
      * @return
      */
-    String readEmail(@Param("email")String email);
+    String readEmail(@Param("id")Long id);
 
     /**
      * 사용자 조회

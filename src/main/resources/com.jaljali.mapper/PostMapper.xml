@@ -1,72 +1,72 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jaljali.mapper.UserMapper">
+<mapper namespace="com.jaljali.mapper.PostMapper">
 
-       <resultMap id="User" type="User">
-          <id     property="id"       column="id"/>
-          <result property="email"    column="email"/>
-          <result property="password" column="password"/>
-          <result property="name"     column="name"/>
-          <result property="phone"    column="phone"/>
+    <insert id="create" parameterType="Post">
+        INSERT  INTO
+        post    (
+                    id,
+                    title,
+                    content,
+                    creator,
+                    created,
+                    modifier,
+                    modified
+                ) VALUES (
+                    #{id},
+                    #{title},
+                    #{content},
+                    #{creator},
+                    #{created},
+                    #{modifier},
+                    #{modified}
+                )
+    </insert>
 
-       </resultMap>
-
-       <insert id="create" parameterType="User">
-          INSERT  INTO
-          user
-          (
-              id,
-              email,
-              password,
-              name,
-              phone
-          ) VALUES (
-              #{id},
-              #{email},
-              #{password},
-              #{name},
-              #{phone}
-          )
-       </insert>
-
-       <update id="update" parameterType="User">
-          UPDATE  user
-          SET     name      = #{name},
-                  phone     = #{phone}
-          WHERE   id        = #{id}
-       </update>
-
-    <update id="updatePassword">
-        UPDATE  user
-        SET     password  = #{password}
+    <update id="update" parameterType="Post">
+        UPDATE  post
+        SET     title     = #{title},
+                content   = #{content},
+                modifier  = #{handler.modifier},
+                modified  = #{handler.modified}
         WHERE   id        = #{id}
+
     </update>
 
-    <select id="read" resultMap="User">
+    <update id="delete">
+        UPDATE  post
+        SET     deleted = 'y'
+        WHERE   id      = #{id}
+    </update>
+
+    <resultMap id="post" type="com.jaljali.domain.Post">
+        <id     property="id"           column="id"/>
+        <result property="title"        column="title"/>
+        <result property="content"      column="content"/>
+        <association property="handler" resultMap="com.jaljali.mapper.HandlerMapper.handler"/>
+    </resultMap>
+
+    <select id="reads" resultMap="post">
         SELECT  id,
-                email,
-                password,
-                name,
-                phone
-        FROM    user
-        WHERE   id        = #{id}
-    </select>
-    <select id="readDto" resultMap="UserDot">
-#         TODO : JOIN 걸고 서브쿼리
-        SELECT  id,
-                email,
-                password,
-                name,
-                phone
-        FROM    user
-        WHERE   id        = #{id}
+                title,
+                content,
+                creator,
+                created,
+                modifier,
+                modified
+        FROM    post
     </select>
 
-    <select id="readEmail" parameterType="String">
-        SELECT  email
-        FROM    user
-        WHERE   id        = #{id}
+    <select id="read" resultMap="post">
+        SELECT  id,
+                title,
+                content,
+                creator,
+                created,
+                modifier,
+                modified
+        FROM    post
+        WHERE   id    = #{id}
     </select>
-
 
 </mapper>

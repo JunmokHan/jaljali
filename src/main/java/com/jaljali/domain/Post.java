@@ -17,6 +17,8 @@ public class Post implements Serializable{
 
     private Handler handler;
 
+    private boolean deleted;
+
     public Long getId() {
         return id;
     }
@@ -47,5 +49,13 @@ public class Post implements Serializable{
 
     public void setHandler(Handler handler) {
         this.handler = handler;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
     }
 }

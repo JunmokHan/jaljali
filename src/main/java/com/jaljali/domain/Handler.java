@@ -4,19 +4,30 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * Created by music on 2016. 6. 12..
+ * 생성, 수정 관련 정보
  */
 public class Handler implements Serializable{
 
     private static final long serialVersionUID = -7653625879763892942L;
 
-    private Long creator;
+    /** 생성자 */
+   private Long creator;
 
+    /** 생성일 */
     private Date created;
 
+    /** 수정자 */
     private Long modifier;
 
+    /** 수정일 */
     private Date modified;
+
+    public Handler(Long id) {
+        this.creator = id;
+        this.created = new Date();
+        this.modifier = id;
+        this.modified = new Date();
+    }
 
     public Long getCreator() {
         return creator;
