@@ -1,5 +1,6 @@
 package com.jaljali.mapper;
 
+import com.jaljali.annotation.Mapper;
 import com.jaljali.domain.User;
 import com.jaljali.domain.dto.UserDto;
 import org.apache.ibatis.annotations.Param;
@@ -7,6 +8,7 @@ import org.apache.ibatis.annotations.Param;
 /**
  * 사용자 userMapper
  */
+@Mapper
 public interface UserMapper {
 
     /**

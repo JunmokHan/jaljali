@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jaljali.mapper.PostMapper">
 
-    <insert id="create" parameterType="Post">
+    <insert id="create" parameterType="com.jaljali.domain.Post">
         INSERT  INTO
         post    (
                     id,
@@ -23,7 +23,7 @@
                 )
     </insert>
 
-    <update id="update" parameterType="Post">
+    <update id="update" parameterType="com.jaljali.domain.Post">
         UPDATE  post
         SET     title     = #{title},
                 content   = #{content},

@@ -1,5 +1,7 @@
 package com.jaljali.domain;
 
+import com.jaljali.domain.common.Handler;
+
 import java.io.Serializable;
 
 /**

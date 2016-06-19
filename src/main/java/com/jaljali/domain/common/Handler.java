@@ -1,4 +1,4 @@
-package com.jaljali.domain;
+package com.jaljali.domain.common;
 
 import java.io.Serializable;
 import java.util.Date;
