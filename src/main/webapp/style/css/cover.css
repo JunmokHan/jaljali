@@ -110,9 +110,11 @@ body {
  */
 
 .cover {
+    /*상하 0, 좌우 20*/
     padding: 0 20px;
 }
 .cover .btn-lg {
+    /*상하 10, 좌우 20*/
     padding: 10px 20px;
     font-weight: bold;
 }
