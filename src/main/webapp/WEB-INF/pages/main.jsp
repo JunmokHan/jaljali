@@ -23,10 +23,16 @@
 	<![endif]-->
 </head>
 <body>
+<div id="background-image">
+</div>
+<div>
 <%--header--%>
 <jsp:include page="layout/header.jsp"/>
+
+<%--body--%>
 <div>
 	<div>
+		<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
 		<input type="text">
 	</div>
 	<div>
@@ -39,10 +45,12 @@
 		<input type="text">
 	</div>
 </div>
+
 <%--footer--%>
 <jsp:include page="layout/footer.jsp"/>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</div>
 </body>
 </html>
