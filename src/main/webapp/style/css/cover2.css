@@ -1,10 +1,7 @@
 body {
     height: 100%;
     /*background: url("/style/image/background1.jpg") no-repeat center center fixed;*/
-    /*-webkit-background-size: cover;*/
-    /*-moz-background-size: cover;*/
-    /*-o-background-size: cover;*/
-    /*background-size: cover;*/
+
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: center;
 }
@@ -12,6 +9,10 @@ body {
 
 #background-image {
     background: url("/style/image/background1.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     opacity: 0.5;
     top: 0;
     left: 0;
