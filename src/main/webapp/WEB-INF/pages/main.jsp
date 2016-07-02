@@ -29,68 +29,87 @@
 	<![endif]-->
 </head>
 <body>
+
+<%--배경 이미지 --%>
 <div id="background-image">
 </div>
-<div>
+
 <%--header--%>
 <jsp:include page="layout/header.jsp"/>
 
 <%--body--%>
-	<div class="form-group">
-		<div class="col-xs-6">
-			<div class="col-md-12">
-				<div class="col-md-1">
-					<span class="glyphicon glyphicon-envelope"></span>
+
+<div class="container">
+	<div class="container-fluid">
+		<div id="body-content">
+			<div class="form-group col-xs-6">
+				<div class="col-md-12">
+					<div class="col-md-1">
+						<span class="glyphicon glyphicon-envelope"></span>
+					</div>
+					<div class="col-md-11">
+						<input type="text" placeholder="ID" class="form-control" size="20">
+					</div>
 				</div>
-				<div class="col-md-11">
-					<input type="text" placeholder="ID" class="form-control" size="20">
+				<div class="col-md-12">
+					<div class="col-md-1">
+						<span class="glyphicon glyphicon-lock">
+						</span>
+					</div>
+					<div class="col-md-11">
+						<input type="password" placeholder="Password" class="form-control">
+					</div>
+				</div>
+				<div class="col-md-12">
+					<button id="signIn" class="btn btn-default" type="button">LogIn</button>
 				</div>
 			</div>
-			<div class="col-md-12">
-				<div class="col-md-1">
-					<span class="glyphicon glyphicon-lock">
-					</span>
-				</div>
-				<div class="col-md-11">
-					<input type="password" placeholder="Password" class="form-control">
-				</div>
-			</div>
-			<div class="col-md-12">
-				<button type="button" onclick="">Login</button>
-			</div>
-		</div>
-		<div class="col-xs-6">
-			<div class="col-md-12">
-				<div class="col-md-1">
-					<span class="glyphicon glyphicon-envelope"></span>
-				</div>
-				<div class="col-md-11">
-					<input type="text" placeholder="ID" class="form-control">
-				</div>
-				<div class="col-md-1">
-					<span class="glyphicon glyphicon-lock"></span>
-				</div>
-				<div class="col-md-11">
-					<input type="password" placeholder="Password" class="form-control">
-				</div>
-				<div class="col-md-1">
-					<span class="glyphicon glyphicon-phone"></span>
-				</div>
-				<div class="col-md-11">
-					<input type="text" placeholder="Phone or Tell" class="form-control">
+			<div class="form-group col-xs-6">
+				<div class="form-group col-md-12">
+					<div class="col-md-1">
+						<span class="glyphicon glyphicon-envelope"></span>
+					</div>
+					<div class="col-md-11">
+						<input type="text" placeholder="ID" class="form-control">
+					</div>
+					<div class="col-md-1">
+						<span class="glyphicon glyphicon-lock"></span>
+					</div>
+					<div class="col-md-11">
+						<input type="password" placeholder="Password" class="form-control">
+					</div>
+					<div class="col-md-1">
+						<span class="glyphicon glyphicon-phone"></span>
+					</div>
+					<div class="col-md-11">
+						<input type="text" placeholder="Phone or Tell" class="form-control">
+					</div>
+					<div class="col-md-12">
+						<button id="signUp" class="btn btn-default" type="button" onclick="">Add User</button>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
 <%--footer--%>
 <jsp:include page="layout/footer.jsp"/>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-</div>
 </body>
 <script>
+	$(function(){
+		$('#signIn').click(function(){
+			alert("로그인 합시다.");
+		});
 
+		$('#signUp').click(function(){
+			alert("회원가입 합시다.");
+		});
+
+	});
 </script>
 </html>

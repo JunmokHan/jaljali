@@ -45,7 +45,7 @@ a:visited {
 }
 
 
-div .header-nav li{
+.header-nav li{
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 10px;
@@ -55,20 +55,40 @@ div .header-nav li{
     font-size: 16px;
 }
 
-div .footer {
+.footer {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+
     position: fixed;
-    top: 10px;
-    bottom : 10px;
+    margin-top:-1.9em;
+    height:1.9em
     text-align: center;
     width: 100%;
 }
 
-.form-control{
-    width: 30%;
+.form-control {
+    margin-bottom: 15px;
 }
 
 .glyphicon {
     top: 9px;
     left: 15px;
     color: whitesmoke;
+}
+
+.btn-default {
+    color: #1b6d85;
+    border-color: #1b6d85;
+    opacity: 0.5;
+}
+
+.btn-default:hover {
+    color: #1b6d85;
+    border-color: #1b6d85;
+    opacity: 0.9;
 }
