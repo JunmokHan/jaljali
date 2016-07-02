@@ -21,7 +21,7 @@
 
 
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="/style/css/cover2.css">
+	<link rel="stylesheet" href="/style/css/bootstrap_custom.less">
 
 	<!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -36,28 +36,61 @@
 <jsp:include page="layout/header.jsp"/>
 
 <%--body--%>
-<div>
-	<div>
-		<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-		<input type="text">
-	</div>
-	<div>
-		<span class="glyphicon glyphicon-lock" aria-hidden="true">
-		</span>
-		<input type="text">
-	</div>
-	<div>
-		<span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
-		<input type="text">
+	<div class="form-group">
+		<div class="col-xs-6">
+			<div class="col-md-12">
+				<div class="col-md-1">
+					<span class="glyphicon glyphicon-envelope"></span>
+				</div>
+				<div class="col-md-11">
+					<input type="text" placeholder="ID" class="form-control" size="20">
+				</div>
+			</div>
+			<div class="col-md-12">
+				<div class="col-md-1">
+					<span class="glyphicon glyphicon-lock">
+					</span>
+				</div>
+				<div class="col-md-11">
+					<input type="password" placeholder="Password" class="form-control">
+				</div>
+			</div>
+			<div class="col-md-12">
+				<button type="button" onclick="">Login</button>
+			</div>
+		</div>
+		<div class="col-xs-6">
+			<div class="col-md-12">
+				<div class="col-md-1">
+					<span class="glyphicon glyphicon-envelope"></span>
+				</div>
+				<div class="col-md-11">
+					<input type="text" placeholder="ID" class="form-control">
+				</div>
+				<div class="col-md-1">
+					<span class="glyphicon glyphicon-lock"></span>
+				</div>
+				<div class="col-md-11">
+					<input type="password" placeholder="Password" class="form-control">
+				</div>
+				<div class="col-md-1">
+					<span class="glyphicon glyphicon-phone"></span>
+				</div>
+				<div class="col-md-11">
+					<input type="text" placeholder="Phone or Tell" class="form-control">
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
-
 <%--footer--%>
 <jsp:include page="layout/footer.jsp"/>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </div>
 </body>
+<script>
+
+</script>
 </html>
