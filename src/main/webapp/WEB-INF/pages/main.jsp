@@ -48,7 +48,7 @@
 						<span class="glyphicon glyphicon-envelope"></span>
 					</div>
 					<div class="col-md-11">
-						<input type="text" placeholder="ID" class="form-control" size="20">
+						<input type="text" placeholder="example@example.com" class="form-control" size="20">
 					</div>
 				</div>
 				<div class="col-md-12">
@@ -70,7 +70,7 @@
 						<span class="glyphicon glyphicon-envelope"></span>
 					</div>
 					<div class="col-md-11">
-						<input type="text" placeholder="ID" class="form-control">
+						<input type="text" placeholder="example@example.com" class="form-control">
 					</div>
 					<div class="col-md-1">
 						<span class="glyphicon glyphicon-lock"></span>
@@ -103,6 +103,9 @@
 <script>
 	$(function(){
 		$('#signIn').click(function(){
+			$.ajax({
+
+			})
 			alert("로그인 합시다.");
 		});
 
