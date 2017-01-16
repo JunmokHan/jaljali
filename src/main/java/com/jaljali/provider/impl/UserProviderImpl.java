@@ -1,8 +1,9 @@
-package com.jaljali.provider;
+package com.jaljali.provider.impl;
 
 import com.jaljali.domain.User;
 import com.jaljali.domain.dto.UserDto;
 import com.jaljali.mapper.UserMapper;
+import com.jaljali.provider.UserProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -10,7 +11,7 @@ import org.springframework.stereotype.Repository;
  * Created by music on 2016. 6. 15..
  */
 @Repository
-public class UserProviderImpl implements UserProvider{
+public class UserProviderImpl implements UserProvider {
 
     @Autowired
     private UserMapper userMapper;

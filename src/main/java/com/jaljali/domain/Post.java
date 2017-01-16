@@ -17,9 +17,9 @@ public class Post implements Serializable{
 
     private String content;
 
-    private Handler handler;
-
     private boolean deleted;
+
+    private Handler handler;
 
     public Long getId() {
         return id;

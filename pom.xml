@@ -10,13 +10,11 @@
     <profiles>
         <profile>
             <id>jaljal-dev</id>
-
         </profile>
-
     </profiles>
     <properties>
         <java.version>1.7</java.version>
-        <springframework.version>4.1.5.RELEASE</springframework.version>
+        <springframework.version>4.3.3.RELEASE</springframework.version>
         <springframework-security.version>3.2.5.RELEASE</springframework-security.version>
         <springframework-security-oauth2.version>2.0.7.RELEASE</springframework-security-oauth2.version>
         <mybatis.version>3.2.8</mybatis.version>

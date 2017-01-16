@@ -85,7 +85,7 @@
 						<input type="text" placeholder="Phone or Tell" class="form-control">
 					</div>
 					<div class="col-md-12">
-						<button id="signUp" class="btn btn-default" type="button" onclick="">Add User</button>
+						<a href="/user"><button id="signUp" class="btn btn-default" type="button" onclick="">SingUp</button></a>
 					</div>
 				</div>
 			</div>
@@ -109,9 +109,9 @@
 			alert("로그인 합시다.");
 		});
 
-		$('#signUp').click(function(){
-			alert("회원가입 합시다.");
-		});
+//		$('#signUp').click(function(){
+//			alert("회원가입 합시다.");
+//		});
 
 	});
 </script>

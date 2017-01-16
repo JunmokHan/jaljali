@@ -1,14 +1,12 @@
-package com.jaljali.service;
+package com.jaljali.service.impl;
 
 import com.jaljali.domain.User;
 import com.jaljali.domain.dto.UserDto;
 import com.jaljali.provider.UserProvider;
+import com.jaljali.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/**
- * Created by music on 2016. 6. 15..
- */
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired

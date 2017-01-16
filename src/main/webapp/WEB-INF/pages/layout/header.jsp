@@ -1,10 +1,16 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<div class="header">
-    <nav>
-        <ul class="header-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-</div>
+<nav class="navbar navbar-default">
+    <div class="container-fluid" style="background-color: rebeccapurple">
+        <div class="col-md-3" align="center">
+            <a href="#"><h1 style="color: azure; font-size: 2em;" class="glyphicon glyphicon-home"></h1></a>
+        </div>
+        <div class="col-md-3" align="center">
+            <a href="#"><h1 style="color: azure; font-size: 2em;" class="glyphicon glyphicon-pencil"></h1></a>
+        </div>
+        <div class="col-md-3" align="center">
+            <a href="#"><h1 style="color: azure; font-size: 2em;" class="glyphicon glyphicon-envelope"></h1></a>
+        </div>
+        <div class="col-md-3" align="center">
+            <a href="#"><h1 style="color: azure; font-size: 2em;" class="glyphicon glyphicon-usd"></h1></a>
+        </div>
+    </div>
+</nav>

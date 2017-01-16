@@ -22,6 +22,8 @@ public class Handler implements Serializable{
     /** 수정일 */
     private Date modified;
 
+    public Handler(){};
+
     public Handler(Long id) {
         this.creator = id;
         this.created = new Date();

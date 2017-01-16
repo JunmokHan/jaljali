@@ -8,6 +8,7 @@
                     id,
                     title,
                     content,
+                    deleted,
                     creator,
                     created,
                     modifier,
@@ -16,6 +17,7 @@
                     #{id},
                     #{title},
                     #{content},
+                    'n',
                     #{creator},
                     #{created},
                     #{modifier},
@@ -43,6 +45,7 @@
         <id     property="id"           column="id"/>
         <result property="title"        column="title"/>
         <result property="content"      column="content"/>
+        <result property="deleted"      column="deleted"/>
         <association property="handler" resultMap="com.jaljali.mapper.HandlerMapper.handler"/>
     </resultMap>
 
