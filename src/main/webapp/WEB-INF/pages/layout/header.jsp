@@ -1,16 +1,16 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid" style="background-color: rebeccapurple">
-        <div class="col-md-3" align="center">
-            <a href="#"><h1 style="color: azure; font-size: 2em;" class="glyphicon glyphicon-home"></h1></a>
-        </div>
-        <div class="col-md-3" align="center">
-            <a href="#"><h1 style="color: azure; font-size: 2em;" class="glyphicon glyphicon-pencil"></h1></a>
-        </div>
-        <div class="col-md-3" align="center">
-            <a href="#"><h1 style="color: azure; font-size: 2em;" class="glyphicon glyphicon-envelope"></h1></a>
-        </div>
-        <div class="col-md-3" align="center">
-            <a href="#"><h1 style="color: azure; font-size: 2em;" class="glyphicon glyphicon-usd"></h1></a>
-        </div>
+<%--Class 정하고 CSS 먹여서 padding 이나 Border 줄 것--%>
+
+<div style="background-color: rebeccapurple;">
+    <div class="col-md-3" style="display: inline;">
+        <a href="#" style="color: azure; font-size: 1em;" class="glyphicon glyphicon-home"></a>
     </div>
-</nav>
+    <div class="col-md-3" style="display: inline;">
+        <a href="#" style="color: azure; font-size: 1em;" class="glyphicon glyphicon-envelope"></a>
+    </div>
+    <div class="col-md-3" style="display: inline;">
+        <a href="#" style="color: azure; font-size: 1em;" class="glyphicon glyphicon-usd"></a>
+    </div>
+    <div class="col-md-3" style="display: inline; float: right">
+        <a href="#" style="color: azure; font-size: 1em;" class="glyphicon glyphicon-pencil"></a>
+    </div>
+</div>
