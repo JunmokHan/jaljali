@@ -1,7 +1,7 @@
 package com.jaljali.controller;
 
-import com.jaljali.domain.Post;
-import com.jaljali.service.PostService;
+import com.jaljali.domain.Job;
+import com.jaljali.service.JobService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,14 +14,14 @@ import java.util.List;
 @RequestMapping("/")
 public class RootController {
 	@Autowired
-	PostService postService;
+	JobService jobService;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView readPosts() {
-		List<Post> posts = postService.reads();
+		List<Job> jobs = jobService.reads();
 
 		ModelAndView mav = new ModelAndView();
-		mav.addObject("posts", posts);
+		mav.addObject("jobs", jobs);
 		mav.setViewName("index");
 		return mav;
 	}

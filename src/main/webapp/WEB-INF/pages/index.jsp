@@ -15,7 +15,7 @@
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 
 <head>
-    <title>Post</title>
+    <title>Main</title>
 </head>
 <body>
     <jsp:include page="layout/header.jsp"/>
@@ -26,21 +26,21 @@
     </thead>
     <tbody>
         <c:choose>
-            <c:when test="${posts.size() > 0}">
-            <c:forEach items="${posts}" var="post">
+            <c:when test="${jobs.size() > 0}">
+            <c:forEach items="${jobs}" var="job">
                 <tr>
                     <td>
                         <c:choose>
-                            <c:when test="${fn:length(post.title) > 30}">
-                                <c:out value="${fn:substring(post.title, 0, 19)}"/> ...
+                            <c:when test="${fn:length(job.title) > 30}">
+                                <c:out value="${fn:substring(job.title, 0, 19)}"/> ...
                             </c:when>
                             <c:otherwise>
-                                <c:out value="${post.title}"/>
+                                <c:out value="${job.title}"/>
                             </c:otherwise>
                         </c:choose>
                     </td>
                     <td>
-                        <fmt:formatDate value='${post.handler.created}' pattern='dd-MM-yyyy'/>
+                        <fmt:formatDate value='${job.handler.created}' pattern='dd-MM-yyyy'/>
                     </td>
                 </tr>
             </c:forEach>
