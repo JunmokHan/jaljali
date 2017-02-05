@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jaljali.mapper.JobMapper">
+
+    <insert id="create" parameterType="com.jaljali.domain.Job">
+        INSERT  INTO
+        job    (
+                    id,
+                    type,
+                    title,
+                    content,
+                    deleted,
+                    creator,
+                    created,
+                    modifier,
+                    modified
+                ) VALUES (
+                    #{id},
+                    #{type},
+                    #{title},
+                    #{content},
+                    'N',
+                    #{creator},
+                    #{created},
+                    #{modifier},
+                    #{modified}
+                )
+    </insert>
+
+    <update id="update" parameterType="com.jaljali.domain.Job">
+        UPDATE  job
+        SET     type      = #{type},
+                title     = #{title},
+                content   = #{content},
+                modifier  = #{handler.modifier},
+                modified  = #{handler.modified}
+        WHERE   id        = #{id}
+
+    </update>
+
+    <update id="delete">
+        UPDATE  Job
+        SET     deleted = 'Y'
+        WHERE   id      = #{id}
+    </update>
+
+    <resultMap id="job" type="com.jaljali.domain.Job">
+        <id     property="id"           column="id"/>
+        <result property="type"         column="type"/>
+        <result property="title"        column="title"/>
+        <result property="content"      column="content"/>
+        <result property="deleted"      column="deleted"/>
+        <association property="handler" resultMap="com.jaljali.mapper.HandlerMapper.handler"/>
+    </resultMap>
+
+    <select id="reads" resultMap="job">
+        SELECT  id,
+                type,
+                title,
+                content,
+                creator,
+                created,
+                modifier,
+                modified
+        FROM    job
+    </select>
+
+    <select id="read" resultMap="job">
+        SELECT  id,
+                type,
+                title,
+                content,
+                creator,
+                created,
+                modifier,
+                modified
+        FROM    job
+        WHERE   id    = #{id}
+    </select>
+
+</mapper>
