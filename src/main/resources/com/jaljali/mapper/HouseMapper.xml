@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jaljali.mapper.JobMapper">
+<mapper namespace="com.jaljali.mapper.HouseMapper">
 
-    <insert id="create" parameterType="com.jaljali.domain.Job">
+    <insert id="create" parameterType="com.jaljali.domain.House">
         INSERT  INTO
-        job    (
+        house   (
                     id,
                     type,
                     title,
@@ -27,8 +27,8 @@
                 )
     </insert>
 
-    <update id="update" parameterType="com.jaljali.domain.Job">
-        UPDATE  job
+    <update id="update" parameterType="com.jaljali.domain.House">
+        UPDATE  house
         SET     type      = #{type},
                 title     = #{title},
                 content   = #{content},
@@ -39,12 +39,12 @@
     </update>
 
     <update id="delete">
-        UPDATE  job
+        UPDATE  house
         SET     deleted = 'Y'
         WHERE   id      = #{id}
     </update>
 
-    <resultMap id="job" type="com.jaljali.domain.Job">
+    <resultMap id="house" type="com.jaljali.domain.House">
         <id     property="id"           column="id"/>
         <result property="type"         column="type"/>
         <result property="title"        column="title"/>
@@ -53,7 +53,7 @@
         <association property="handler" resultMap="com.jaljali.mapper.HandlerMapper.handler"/>
     </resultMap>
 
-    <select id="reads" resultMap="job">
+    <select id="reads" resultMap="house">
         SELECT  id,
                 type,
                 title,
@@ -62,10 +62,10 @@
                 created,
                 modifier,
                 modified
-        FROM    job
+        FROM    house
     </select>
 
-    <select id="read" resultMap="job">
+    <select id="read" resultMap="house">
         SELECT  id,
                 type,
                 title,
@@ -74,7 +74,7 @@
                 created,
                 modifier,
                 modified
-        FROM    job
+        FROM    house
         WHERE   id    = #{id}
     </select>
 

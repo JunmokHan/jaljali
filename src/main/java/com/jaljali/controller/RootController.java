@@ -17,11 +17,12 @@ public class RootController {
 	JobService jobService;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public ModelAndView readPosts() {
+	public ModelAndView reads() {
 		List<Job> jobs = jobService.reads();
 
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("jobs", jobs);
+		mav.addObject("page", "job/list");
 		mav.setViewName("index");
 		return mav;
 	}
