@@ -9,8 +9,16 @@
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 
 <ul class="nav nav-pills" style="background-color: rebeccapurple;">
-    <li role="presentation"><a href="/house" style="color: azure;" class="glyphicon glyphicon-home"></a></li>
-    <li role="presentation"><a href="#" style="color: azure;" class="glyphicon glyphicon-envelope"></a></li>
-    <li role="presentation"><a href="#" style="color: azure;" class="glyphicon glyphicon-usd"></a></li>
-    <li role="presentation" style=" float: right;"><a href="#" style="color: azure;" class="glyphicon glyphicon-pencil"></a></li>
+    <li role="presentation">
+        <a href="/house" style="color: azure;" class="glyphicon glyphicon-home"></a>
+    </li>
+    <li role="presentation">
+        <a href="#" style="color: azure;" class="glyphicon glyphicon-envelope"></a>
+    </li>
+    <li role="presentation">
+        <a href="/job" style="color: azure;" class="glyphicon glyphicon-usd"></a>
+    </li>
+    <li role="presentation" style=" float: right;">
+        <a href="#" style="color: azure;" class="glyphicon glyphicon-pencil"></a>
+    </li>
 </ul>
