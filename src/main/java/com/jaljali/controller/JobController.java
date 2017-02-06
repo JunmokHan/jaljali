@@ -16,7 +16,6 @@ public class JobController {
 
     @Autowired
     private JobService jobService;
-    //TODO : 메소드 생성
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView reads(){

@@ -45,4 +45,15 @@ public class HouseController {
 
         return mav;
     }
+
+
+    @RequestMapping(value = "/create", method = RequestMethod.GET)
+    public ModelAndView create(){
+
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("page", "house/new");
+        mav.setViewName("index");
+
+        return mav;
+    }
 }
