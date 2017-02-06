@@ -10,9 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-/**
- * Created by music on 2017. 2. 5..
- */
 @Controller
 @RequestMapping(value = "/job")
 public class JobController {
