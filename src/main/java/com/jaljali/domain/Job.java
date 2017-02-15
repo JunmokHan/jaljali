@@ -26,16 +26,20 @@ public class Job implements Serializable{
     private String type;
     /** 글 제목 */
     private String title;
+    /** 시급 */
     private BigDecimal wage;
-    private String time;
+    /** 근무 시간 */
+    private String workingTime;
+    /** 근무 시작 일 */
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private Date start;
+    private Date startDate;
     /** 글 내용 */
     private String content;
     /** 삭제 여부 */
     private boolean deleted;
     /** 작성 정보 */
     private Handler handler;
+
 
     public Long getId() {
         return id;
@@ -61,6 +65,30 @@ public class Job implements Serializable{
         this.title = title;
     }
 
+    public BigDecimal getWage() {
+        return wage;
+    }
+
+    public void setWage(BigDecimal wage) {
+        this.wage = wage;
+    }
+
+    public String getWorkingTime() {
+        return workingTime;
+    }
+
+    public void setWorkingTime(String workingTime) {
+        this.workingTime = workingTime;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
     public String getContent() {
         return content;
     }
@@ -69,19 +97,19 @@ public class Job implements Serializable{
         this.content = content;
     }
 
-    public Handler getHandler() {
-        return handler;
-    }
-
-    public void setHandler(Handler handler) {
-        this.handler = handler;
-    }
-
     public boolean isDeleted() {
         return deleted;
     }
 
     public void setDeleted(boolean deleted) {
         this.deleted = deleted;
+    }
+
+    public Handler getHandler() {
+        return handler;
+    }
+
+    public void setHandler(Handler handler) {
+        this.handler = handler;
     }
 }

@@ -8,6 +8,9 @@
                     id,
                     type,
                     title,
+                    wage,
+                    working_time,
+                    start_date,
                     content,
                     deleted,
                     creator,
@@ -18,23 +21,29 @@
                     #{id},
                     #{type},
                     #{title},
+                    #{wage},
+                    #{workingTime},
+                    #{startDate},
                     #{content},
                     'N',
-                    #{creator},
-                    #{created},
-                    #{modifier},
-                    #{modified}
+                    #{handler.creator},
+                    #{handler.created},
+                    #{handler.modifier},
+                    #{handler.modified}
                 )
     </insert>
 
     <update id="update" parameterType="com.jaljali.domain.Job">
         UPDATE  job
-        SET     type      = #{type},
-                title     = #{title},
-                content   = #{content},
-                modifier  = #{handler.modifier},
-                modified  = #{handler.modified}
-        WHERE   id        = #{id}
+        SET     type          = #{type},
+                title         = #{title},
+                wage          = #{wage},
+                working_time  = #{workingTime},
+                start_date    = #{startDate},
+                content       = #{content},
+                modifier      = #{handler.modifier},
+                modified      = #{handler.modified}
+        WHERE   id            = #{id}
 
     </update>
 
@@ -48,6 +57,9 @@
         <id     property="id"           column="id"/>
         <result property="type"         column="type"/>
         <result property="title"        column="title"/>
+        <result property="wage"         column="wage"/>
+        <result property="workingTime"  column="working_time"/>
+        <result property="startDate"    column="start_date"/>
         <result property="content"      column="content"/>
         <result property="deleted"      column="deleted"/>
         <association property="handler" resultMap="com.jaljali.mapper.HandlerMapper.handler"/>
@@ -57,18 +69,25 @@
         SELECT  id,
                 type,
                 title,
+                wage,
+                working_time,
+                start_date,
                 content,
                 creator,
                 created,
                 modifier,
                 modified
         FROM    job
+        ORDER BY created  DESC
     </select>
 
     <select id="read" resultMap="job">
         SELECT  id,
                 type,
                 title,
+                wage,
+                working_time,
+                start_date,
                 content,
                 creator,
                 created,

@@ -28,15 +28,12 @@
         </div>
         <div>
             How long is Working Time<br/>
-            <input name="time" type="text" class="form-control" style="width: 100%;" placeholder="Working Time" required="required">
+            <input name="workingTime" type="text" class="form-control" style="width: 100%;" placeholder="Working Time" required="required">
         </div>
-        <div class="input-group date" id="datepicker">
+        <div>
             When will be Started<br/>
             <%--FIXME : datepicker 로 변경 --%>
-            <input name="start" type="text" class="form-control" placeholder="Working Start">
-            <span class="input-group-addon">
-                <span class="glyphicon glyphicon-calendar"></span>
-            </span>
+            <input name="startDate" type="text" class="form-control" placeholder="YYYY-MM-DD">
         </div>
         <div>
             Detail<br/>
@@ -47,9 +44,4 @@
         </div>
     </form>
 </body>
-<script type="text/javascript">
-    $(function () {
-        $('#datetimepicker').datetimepicker();
-    });
-</script>
 </html>

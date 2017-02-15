@@ -17,7 +17,8 @@
         </colgroup>
         <thead>
         <td style="text-align: center;">Type</td>
-        <td style="text-align: center;">Title</td>
+        <td>Title</td>
+        <td style="text-align: center;">Wage</td>
         <td style="text-align: center;">Created</td>
         </thead>
         <tbody>
@@ -35,7 +36,7 @@
                                 </c:otherwise>
                             </c:choose>
                         </td>
-                        <td style="text-align: center;">
+                        <td>
                             <c:choose>
                                 <c:when test="${fn:length(job.title) > 30}">
                                     <c:out value="${fn:substring(job.title, 0, 19)}"/> ...
@@ -44,6 +45,9 @@
                                     <c:out value="${job.title}"/>
                                 </c:otherwise>
                             </c:choose>
+                        </td>
+                        <td style="text-align: center;">
+                            $ <c:out value="${job.wage}"/>
                         </td>
                         <td>
                             <fmt:formatDate value='${job.handler.created}' pattern='dd/MM/yyyy'/>
