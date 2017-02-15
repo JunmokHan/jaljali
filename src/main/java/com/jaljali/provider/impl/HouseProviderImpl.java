@@ -25,8 +25,9 @@ public class HouseProviderImpl implements HouseProvider{
     }
 
     @Override
-    public void create(House house) {
+    public Long create(House house) {
         houseMapper.create(house);
+        return house.getId();
     }
 
     @Override

@@ -1,0 +1,24 @@
+
+
+body {
+    /*background-color: #faebcc;*/
+    background-color: #ffffff;
+}
+
+div {
+    padding: 0.25em;
+}
+
+tr {
+    padding: 0.25em;
+}
+
+td {
+    padding: 0.25em;
+}
+
+/*
+thead   {
+    /*border-bottom: thick solid lightgray;
+    }
+*/

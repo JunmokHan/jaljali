@@ -24,8 +24,9 @@ public interface HouseProvider {
     /**
      * 집 게시물 생성
      * @param house
+     * @return id
      */
-    void create(House house);
+    Long create(House house);
 
     /**
      * 집 게시물 수정

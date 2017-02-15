@@ -14,11 +14,13 @@
         <colgroup>
             <col width="10%">
             <col width="*">
+            <col width="20%">
             <col width="15%">
         </colgroup>
         <thead>
         <td style="text-align: center;">Type</td>
-        <td style="text-align: center;">Title</td>
+        <td>Title</td>
+        <td style="text-align: center;">Price</td>
         <td style="text-align: center;">Created</td>
         </thead>
         <tbody>
@@ -27,16 +29,17 @@
                 <c:forEach items="${houses}" var="house">
                     <tr>
                         <td style="text-align: center;">
+                            <%-- FIXME : 버튼 또는 이미지화 시킬 것--%>
                             <c:choose>
                                 <c:when test="${house.type eq 'SHARE'}">
-                                    쉐어
+                                    SHARE
                                 </c:when>
                                 <c:otherwise>
-                                    렌트
+                                    RENT
                                 </c:otherwise>
                             </c:choose>
                         </td>
-                        <td style="text-align: center;">
+                        <td>
                             <c:choose>
                                 <c:when test="${fn:length(house.title) > 30}">
                                     <c:out value="${fn:substring(house.title, 0, 19)}"/> ...
@@ -46,6 +49,9 @@
                                 </c:otherwise>
                             </c:choose>
                         </td>
+                        <td style="text-align: center;">
+                            $ <c:out value="${house.price}"/>
+                        </td>
                         <td>
                             <fmt:formatDate value='${house.handler.created}' pattern='dd/MM/yyyy'/>
                         </td>
@@ -54,7 +60,7 @@
             </c:when>
             <c:otherwise>
                 <tr>
-                    <td colspan="3">
+                    <td colspan="4">
                         게시글이 없습니다.
                     </td>
                 </tr>

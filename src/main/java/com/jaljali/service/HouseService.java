@@ -22,7 +22,7 @@ public interface HouseService {
      * 집 게시글 생성
      * @param house
      */
-    void create(House house);
+    Long create(House house);
 
     /**
      * 집 게시글 수정

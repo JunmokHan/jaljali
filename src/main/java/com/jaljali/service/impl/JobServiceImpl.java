@@ -28,8 +28,8 @@ public class JobServiceImpl implements JobService {
     }
 
     @Override
-    public void create(Job job) {
-        jobProvider.create(job);
+    public Long create(Job job) {
+        return jobProvider.create(job);
     }
 
     @Override

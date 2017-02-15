@@ -8,9 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Created by music on 2017. 2. 5..
- */
 @Service
 public class HouseServiceImpl implements HouseService{
 
@@ -28,8 +25,8 @@ public class HouseServiceImpl implements HouseService{
     }
 
     @Override
-    public void create(House house) {
-        houseProvider.create(house);
+    public Long create(House house) {
+        return houseProvider.create(house);
     }
 
     @Override

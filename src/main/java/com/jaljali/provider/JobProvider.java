@@ -25,7 +25,7 @@ public interface JobProvider {
      * 구인구직 생성
      * @param job
      */
-    void create(Job job);
+    Long create(Job job);
 
     /**
      * 구인구직 수정

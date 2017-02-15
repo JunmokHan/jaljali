@@ -2,12 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.jaljali.mapper.HouseMapper">
 
-    <insert id="create" parameterType="com.jaljali.domain.House">
+    <insert id="create" parameterType="com.jaljali.domain.House"  keyColumn="id" keyProperty="id" useGeneratedKeys="true" >
         INSERT  INTO
         house   (
                     id,
                     type,
                     title,
+                    address,
+                    price,
+                    people,
                     content,
                     deleted,
                     creator,
@@ -18,12 +21,15 @@
                     #{id},
                     #{type},
                     #{title},
+                    #{address},
+                    #{price},
+                    #{people},
                     #{content},
                     'N',
-                    #{creator},
-                    #{created},
-                    #{modifier},
-                    #{modified}
+                    #{handler.creator},
+                    #{handler.created},
+                    #{handler.modifier},
+                    #{handler.modified}
                 )
     </insert>
 
@@ -31,6 +37,9 @@
         UPDATE  house
         SET     type      = #{type},
                 title     = #{title},
+                address   = #{address},
+                price     = #{price},
+                people    = #{people},
                 content   = #{content},
                 modifier  = #{handler.modifier},
                 modified  = #{handler.modified}
@@ -48,6 +57,9 @@
         <id     property="id"           column="id"/>
         <result property="type"         column="type"/>
         <result property="title"        column="title"/>
+        <result property="address"      column="address"/>
+        <result property="price"        column="price"/>
+        <result property="people"       column="people"/>
         <result property="content"      column="content"/>
         <result property="deleted"      column="deleted"/>
         <association property="handler" resultMap="com.jaljali.mapper.HandlerMapper.handler"/>
@@ -57,18 +69,25 @@
         SELECT  id,
                 type,
                 title,
+                address,
+                price,
+                people,
                 content,
                 creator,
                 created,
                 modifier,
                 modified
         FROM    house
+        ORDER BY created DESC
     </select>
 
     <select id="read" resultMap="house">
         SELECT  id,
                 type,
                 title,
+                address,
+                price,
+                people,
                 content,
                 creator,
                 created,

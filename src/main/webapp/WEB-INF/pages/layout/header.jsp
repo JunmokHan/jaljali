@@ -8,6 +8,8 @@
 <!-- Latest compiled and minified JavaScript -->
 <meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
 
+<link rel="stylesheet" href="/style/css/style.css">
+
 <script>
     $(function () {
         var page = '${page}';
@@ -19,15 +21,15 @@
 
 <ul class="nav nav-pills" style="background-color: rebeccapurple;">
     <li role="presentation">
-        <a href="/house" style="color: azure;" class="glyphicon glyphicon-home"></a>
+        <a href="/house" style="color: whitesmoke;" class="glyphicon glyphicon-home"></a>
     </li>
     <li role="presentation">
-        <a href="#" style="color: azure;" class="glyphicon glyphicon-envelope"></a>
+        <a href="#" style="color: whitesmoke;" class="glyphicon glyphicon-envelope"></a>
     </li>
     <li role="presentation">
-        <a href="/job" style="color: azure;" class="glyphicon glyphicon-usd"></a>
+        <a href="/job" style="color: whitesmoke;" class="glyphicon glyphicon-usd"></a>
     </li>
     <li role="presentation" style=" float: right;">
-        <a id="create" style="color: azure;" class="glyphicon glyphicon-pencil"></a>
+        <a id="create" style="color: whitesmoke;" class="glyphicon glyphicon-pencil"></a>
     </li>
 </ul>

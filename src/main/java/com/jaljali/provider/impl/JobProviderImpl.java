@@ -28,8 +28,9 @@ public class JobProviderImpl implements JobProvider {
     }
 
     @Override
-    public void create(Job job) {
+    public Long create(Job job) {
         jobMapper.create(job);
+        return job.getId();
     }
 
     @Override
