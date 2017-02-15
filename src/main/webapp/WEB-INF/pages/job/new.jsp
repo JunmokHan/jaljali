@@ -5,8 +5,8 @@
 </head>
 <body>
     <form action="/job/create" method="POST">
-        <div>
-            <h1>Job Regist</h1>
+        <div style="text-align: center;">
+            <h2>Job Regist</h2>
         </div>
         <div>
             <select class="form-control" name="type">
@@ -23,17 +23,17 @@
             <input name="address" type="text" class="form-control" style="width: 100%;" placeholder="Based On Google Map" required="required">
         </div>
         <div>
-            How much is Per a Hour<br/>
+            How much is Per a Hour?<br/>
             <input name="wage" type="text" class="form-control" style="width: 100%;" placeholder="$ per a Week" required="required">
         </div>
         <div>
-            How long is Working Time<br/>
+            How long is Working Time?<br/>
             <input name="workingTime" type="text" class="form-control" style="width: 100%;" placeholder="Working Time" required="required">
         </div>
         <div>
-            When will be Started<br/>
+            When will be Started?<br/>
             <%--FIXME : datepicker 로 변경 --%>
-            <input name="startDate" type="text" class="form-control" placeholder="YYYY-MM-DD">
+            <input name="startDate" type="text" class="form-control" placeholder="YYYY-MM-DD" required="required">
         </div>
         <div>
             Detail<br/>

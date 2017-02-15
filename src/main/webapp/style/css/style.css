@@ -6,10 +6,12 @@ body {
 }
 
 div {
+    width: 100%;
     padding: 0.25em;
 }
 
 tr {
+    width: 100%;
     padding: 0.25em;
 }
 
@@ -17,8 +19,3 @@ td {
     padding: 0.25em;
 }
 
-/*
-thead   {
-    /*border-bottom: thick solid lightgray;
-    }
-*/
