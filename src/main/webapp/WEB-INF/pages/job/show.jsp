@@ -1,48 +1,50 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>House Detail</title>
+    <title>Job Detail</title>
 </head>
 <body>
     <div style="text-align: center;">
-        <h2>House Detail</h2>
+        <h2>Job Detail</h2>
     </div>
     <div>
-        Share Type
+        Job Type
         <div class="form-control">
-            <c:out value="${house.type}"/>
+            <c:out value="${job.type}"/>
         </div>
     </div>
     <div>
         Title
         <div class="form-control">
-            <c:out value="${house.title}"/>
+            <c:out value="${job.title}"/>
         </div>
     </div>
     <div>
-        Address
+        Wage
         <div class="form-control">
-            <c:out value="${house.address}"/>
+            $ <c:out value="${job.wage}"/>
         </div>
     </div>
     <div>
-        Price
+        Working Time
         <div class="form-control">
-            $ <c:out value="${house.price}"/>
+            <c:out value="${job.workingTime}"/>
         </div>
     </div>
     <div>
-        People
+        Start Date
         <div class="form-control">
-            <c:out value="${house.people}"/>
+            <fmt:formatDate value="${job.startDate}" pattern="yyyy-MM-dd"/>
         </div>
     </div>
     <div>
         Detail<br/>
         <div>
             <textarea name="content" class="form-control" disabled="disabled">
-                <c:out value="${house.content}"/>
+                <c:out value="${job.content}"/>
             </textarea>
         </div>
     </div>

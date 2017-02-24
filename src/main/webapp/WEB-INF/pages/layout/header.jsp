@@ -24,14 +24,14 @@
 <ul class="nav nav-pills" style="background-color: rebeccapurple;">
     <li role="presentation">
         <%--FIXME : login 시 사용자 정보 수정 화면, 비로그인시 회원가입 화면 --%>
-        <c:choose>
-            <c:when test="">
+        <%--<c:choose>--%>
+            <%--<c:when test="">--%>
+                <%--<a href="#" style="color: whitesmoke;" class="glyphicon glyphicon-user"></a>--%>
+            <%--</c:when>--%>
+            <%--<c:otherwise>--%>
                 <a href="#" style="color: whitesmoke;" class="glyphicon glyphicon-user"></a>
-            </c:when>
-            <c:otherwise>
-                <a href="#" style="color: whitesmoke;" class="glyphicon glyphicon-user"></a>
-            </c:otherwise>
-        </c:choose>
+            <%--</c:otherwise>--%>
+        <%--</c:choose>--%>
     </li>
     <li role="presentation">
         <a href="/house" style="color: whitesmoke;" class="glyphicon glyphicon-home"></a>

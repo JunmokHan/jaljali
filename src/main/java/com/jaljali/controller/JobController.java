@@ -32,6 +32,7 @@ public class JobController {
         return mav;
     }
 
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ModelAndView read(
             @PathVariable("id") Long id
     ){
