@@ -21,6 +21,7 @@
                             <td>
                                 <div>
                                     <%-- FIXME : 버튼 또는 이미지화 시킬 것--%>
+                                    <h5>
                                     <c:choose>
                                         <c:when test="${house.type eq 'SHARE'}">
                                             SHARE
@@ -33,11 +34,12 @@
                                     $ <c:out value="${house.price}"/>
                                     &nbsp; | &nbsp;
                                     <fmt:formatDate value='${house.handler.created}' pattern='dd/MM/yyyy'/>
+                                    </h5>
                                 </div>
                                 <div>
                                     <c:choose>
                                         <c:when test="${fn:length(house.title) > 30}">
-                                            <c:out value="${fn:substring(house.title, 0, 19)}"/> ...
+                                            <c:out value="${fn:substring(house.title, 0, 16)}"/> ...
                                         </c:when>
                                         <c:otherwise>
                                             <c:out value="${house.title}"/>

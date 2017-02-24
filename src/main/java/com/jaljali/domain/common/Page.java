@@ -15,15 +15,48 @@ public class Page implements Serializable {
     */
 
     /** DB Row 시작 번호 */
-    private Long startNum;
+    private int startNum = 0;
 
     /** DB Row 끝 번호 */
-    private Long endNum;
+    private int endNum;
 
     /** 현재 페이지 번호 */
-    private Long pageNum;
+    private int pageNum = 1;
 
     /** 5개씩 호출 */
-    private int count;
+    private int count = 5;
 
+
+
+    public int getStartNum() {
+        return startNum;
+    }
+
+    public void setStartNum(int startNum) {
+        this.startNum = startNum;
+    }
+
+    public int getEndNum() {
+        return endNum;
+    }
+
+    public void setEndNum(int endNum) {
+        this.endNum = endNum;
+    }
+
+    public int getPageNum() {
+        return pageNum;
+    }
+
+    public void setPageNum(int pageNum) {
+        this.pageNum = pageNum;
+    }
+
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
 }

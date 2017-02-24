@@ -20,9 +20,14 @@
         var pageArr = page.split("/");
         var createPage = pageArr[0];
         $('#create').attr("href", "/"+createPage+"/create");
-    })
+    });
 </script>
 <ul class="nav nav-pills" style="background-color: rebeccapurple;">
+    <div>
+        <p style="color: whitesmoke;">
+        본 페이지는 모바일에 최적화 되어 있습니다.
+        </p>
+    </div>
     <li role="presentation">
         <%--FIXME : login 시 사용자 정보 수정 화면, 비로그인시 회원가입 화면 --%>
         <%--<c:choose>--%>
