@@ -1,3 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--Class 정하고 CSS 먹여서 padding 이나 Border 줄 것--%>
 
@@ -20,7 +22,6 @@
         $('#create').attr("href", "/"+createPage+"/create");
     })
 </script>
-
 <ul class="nav nav-pills" style="background-color: rebeccapurple;">
     <li role="presentation">
         <%--FIXME : login 시 사용자 정보 수정 화면, 비로그인시 회원가입 화면 --%>
