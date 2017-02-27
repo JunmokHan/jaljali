@@ -13,7 +13,7 @@
 </head>
 <body>
     <table class="table">
-        <tbody>
+        <tbody id="houseList">
             <c:choose>
                 <c:when test="${houses.size() > 0}">
                     <c:forEach items="${houses}" var="house">
@@ -22,18 +22,18 @@
                                 <div>
                                     <%-- FIXME : 버튼 또는 이미지화 시킬 것--%>
                                     <h5>
-                                    <c:choose>
-                                        <c:when test="${house.type eq 'SHARE'}">
-                                            SHARE
-                                        </c:when>
-                                        <c:otherwise>
-                                            RENT
-                                        </c:otherwise>
-                                    </c:choose>
-                                    &nbsp; | &nbsp;
-                                    $ <c:out value="${house.price}"/>
-                                    &nbsp; | &nbsp;
-                                    <fmt:formatDate value='${house.handler.created}' pattern='dd/MM/yyyy'/>
+                                        <c:choose>
+                                            <c:when test="${house.type eq 'SHARE'}">
+                                                SHARE
+                                            </c:when>
+                                            <c:otherwise>
+                                                RENT
+                                            </c:otherwise>
+                                        </c:choose>
+                                        &nbsp; | &nbsp;
+                                        $ <c:out value="${house.price}"/>
+                                        &nbsp; | &nbsp;
+                                        <fmt:formatDate value='${house.handler.created}' pattern='dd/MM/yyyy'/>
                                     </h5>
                                 </div>
                                 <div>
@@ -60,5 +60,22 @@
             </c:choose>
         </tbody>
     </table>
+<script type="text/javascript">
+    $(function () {
+        var table = $('#houseList');
+//        if(페이지 끝에 다다르면){
+//            var lastNum = $('tbody tr').length - 1;
+//            $.ajax({
+//               url : "",
+//               success : function () {
+        // TODO : page 끝 부분 도착할 시 데이터 호출해서 table.append()
+//               },
+//               error : function () {
+//
+//               }
+//            });
+//        }
+    })
+</script>
 </body>
 </html>

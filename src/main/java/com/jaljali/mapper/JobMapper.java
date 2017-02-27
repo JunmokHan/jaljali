@@ -15,7 +15,7 @@ public interface JobMapper {
     /**
      * 게시글 전체 조회
      */
-    List<Job> reads();
+    List<Job> reads(int index);
 
     /**
      * 게시글 조회

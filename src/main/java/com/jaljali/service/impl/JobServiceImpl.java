@@ -18,8 +18,8 @@ public class JobServiceImpl implements JobService {
     private JobProvider jobProvider;
 
     @Override
-    public List<Job> reads() {
-        return jobProvider.reads();
+    public List<Job> reads(int index) {
+        return jobProvider.reads(index);
     }
 
     @Override

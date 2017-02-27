@@ -12,30 +12,32 @@
 </head>
 <body>
     <table class="table">
-        <tbody>
+        <tbody id="list">
             <c:choose>
                 <c:when test="${jobs.size() > 0}">
                     <c:forEach items="${jobs}" var="job">
                         <tr onclick="location.href='/job/${job.id}'">
                             <td>
                                 <div>
-                                    <c:choose>
-                                        <c:when test="${job.type eq 'EMPLOYER'}">
-                                            구인
-                                        </c:when>
-                                        <c:otherwise>
-                                            구직
-                                        </c:otherwise>
-                                    </c:choose>
-                                    &nbsp; | &nbsp;
-                                    $ <c:out value="${job.wage}"/>
-                                    &nbsp; | &nbsp;
-                                    <fmt:formatDate value='${job.handler.created}' pattern='dd/MM/yyyy'/>
+                                    <h5>
+                                        <c:choose>
+                                            <c:when test="${job.type eq 'EMPLOYER'}">
+                                                구인
+                                            </c:when>
+                                            <c:otherwise>
+                                                구직
+                                            </c:otherwise>
+                                        </c:choose>
+                                        &nbsp; | &nbsp;
+                                        $ <c:out value="${job.wage}"/>
+                                        &nbsp; | &nbsp;
+                                        <fmt:formatDate value='${job.handler.created}' pattern='dd/MM/yyyy'/>
+                                    </h5>
                                 </div>
                                 <div>
                                     <c:choose>
                                         <c:when test="${fn:length(job.title) > 30}">
-                                            <c:out value="${fn:substring(job.title, 0, 19)}"/> ...
+                                            <c:out value="${fn:substring(job.title, 0, 16)}"/> ...
                                         </c:when>
                                         <c:otherwise>
                                             <c:out value="${job.title}"/>
@@ -56,5 +58,27 @@
             </c:choose>
         </tbody>
     </table>
+<script type="text/javascript">
+    $(function () {
+//        var table = $('#list');
+//        if(페이지 끝에 다다르면){
+//            var lastNum = $('tbody tr').length - 1;
+//            $.ajax({
+//               url : "",
+//               success : function (data) {
+//                   TODO : each (function () {
+//                       table.append();
+//                       if(data.length < 5){
+//                           호출 막아야 하는데..
+//                       }
+//                   })
+//               },
+//               error : function () {
+//
+//               }
+//            });
+//        }
+    })
+</script>
 </body>
 </html>

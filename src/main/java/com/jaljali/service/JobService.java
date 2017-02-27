@@ -9,7 +9,7 @@ public interface JobService {
     /**
      * 구인구직 게시글 전체 조회
      */
-    List<Job> reads();
+    List<Job> reads(int index);
 
     /**
      * 구인구직 게시글 조회

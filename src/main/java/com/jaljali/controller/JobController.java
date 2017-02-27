@@ -22,7 +22,7 @@ public class JobController {
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView reads(){
 
-        List<Job> jobs = jobService.reads();
+        List<Job> jobs = jobService.reads(0);
 
         ModelAndView mav = new ModelAndView();
         mav.addObject("jobs", jobs);
